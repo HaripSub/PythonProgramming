@@ -1,10 +1,10 @@
 # variable declarations
 
-name = "Fedrik"
-age = 45
+name = input('Enter your name: ')
+age = int(input('Enter your age: '))
 
-a = 2
-b = 4
+a = input('Enter first number: ')
+b = input('Enter second number: ')
 
 print("...........................................................................................")
 
@@ -12,6 +12,7 @@ print("Functions without arguments")
 
 
 def print_details():
+
     print('my name is %s and age is %d' % (name, age))
 
 
@@ -27,11 +28,11 @@ print(".........................................................................
 
 
 def addition(a, b):
-    return a + b;
+    return int(a) + int(b);
 
 
 def maximum(a, b):
-    return max(a, b);
+    return max(int(a), int(b));
 
 
 print(f"The sum of {a} and {b} is {addition(a, b)}")
@@ -69,7 +70,7 @@ print_your_details(age=45, name="Sam")
 
 print("------------------------------------------------------------------------------------")
 
-print("Arbitary Arguments")
+print("Arbitrary Arguments")
 
 print("------------------------------------------------------------------------------------")
 
