@@ -13,12 +13,14 @@ num_records = 1000
 output_file = "person_data.csv"
 
 # Define the field names
-fieldnames = ['id', 'name', 'age', 'location']
+fieldnames = ['id', 'name', 'age', 'location', 'gender']
 
 cities = [
     "New York", "Los Angeles", "Chicago", "Houston", "Phoenix",
     "San Francisco", "Seattle", "Denver", "Washington", "Boston"
 ]
+
+genders = ['Male', 'Female']
 
 # Open the CSV file for writing
 with open(output_file, mode='w', newline='') as file:
@@ -31,7 +33,8 @@ with open(output_file, mode='w', newline='') as file:
             'id': i,
             'name': fake.name(),
             'age': fake.random_int(min=1, max=100),
-            'location':  random.choice(cities)
+            'location':  random.choice(cities),
+            'gender': random.choice(genders)
         })
 
 print(f"Generated {num_records} records and saved to {output_file}")

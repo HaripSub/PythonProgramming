@@ -1,6 +1,8 @@
 from pyspark.sql import SparkSession
 
 # Initialize Spark session
+from pyspark.sql.functions import col
+
 spark = SparkSession.builder \
     .appName("Example PySpark Program") \
     .getOrCreate()
@@ -24,7 +26,7 @@ print("Distinct city names:")
 for city in distinct_city_names:
     print(city)
 
-# Oldest living in Washington
+# Oldest citizens living in Washington
 df_senior_washington = df.filter(df.location == "Washington").orderBy(df["age"].desc())
 
 # Show the filtered and sorted DataFrame
@@ -60,5 +62,25 @@ count_teenagers.show()
 teenagers_Los_Angeles = df.filter((df.age >= 13) & (df.age <= 19) & (df.location == "Los Angeles")).orderBy("name")
 print(" Teenagers living in LosAngles:")
 teenagers_Los_Angeles.show()
+
+city_female_counts = df.filter(col('gender') == 'Female') \
+                        .groupBy('location') \
+                        .count() \
+                        .withColumnRenamed('count', 'female_count').orderBy('female_count',ascending=False)
+print("Number of females in each city")
+
+city_female_counts.show()
+
+# Find city with maximum females
+max_female_city = city_female_counts.orderBy(col('female_count').desc()).first()
+
+print("City with the maximum number of females:", max_female_city['location'])
+print("Number of females in the city:", max_female_city['female_count'])
+
+min_female_city = city_female_counts.orderBy(col('female_count').asc()).first()
+
+print("City with the minimum number of females:", min_female_city['location'])
+print("Number of females in the city:", min_female_city['female_count'])
+
 
 spark.stop()
