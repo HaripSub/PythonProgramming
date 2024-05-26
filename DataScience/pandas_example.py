@@ -96,6 +96,16 @@ max_female_count = city_female_counts.max()
 print(f'{city_with_max_females} with {max_female_count} females')
 
 
+print("city with minimum of females")
+
+city_with_min_females = city_female_counts.idxmin()
+
+min_female_count = city_female_counts.min()
+
+
+print(f'{city_with_min_females} with {min_female_count} females')
+
+
 
 
 
