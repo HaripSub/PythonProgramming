@@ -71,7 +71,6 @@ female_senior_citizens_data_boston = senior_citizens_data[
 
 print(female_senior_citizens_data_boston[['name', 'age']])
 
-
 print("count the male and female teenagers in living New york")
 
 teenagers_data_newyork = teenagers_data[teenagers_data['location'] == 'New York']
@@ -92,9 +91,7 @@ city_with_max_females = city_female_counts.idxmax()
 
 max_female_count = city_female_counts.max()
 
-
 print(f'{city_with_max_females} with {max_female_count} females')
-
 
 print("city with minimum of females")
 
@@ -102,11 +99,13 @@ city_with_min_females = city_female_counts.idxmin()
 
 min_female_count = city_female_counts.min()
 
-
 print(f'{city_with_min_females} with {min_female_count} females')
 
+print("Female babies living in Seattle")
 
+female_babies_living_in_Seattle = df_persons_data[(df_persons_data['age'] >= 1) & (df_persons_data['age'] <= 5)
+                                                  & (df_persons_data['location'] == 'Seattle') &
+                                                  (df_persons_data['gender'] == 'Female')]
 
-
-
+print(female_babies_living_in_Seattle[['name', 'age']])
 

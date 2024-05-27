@@ -66,7 +66,7 @@ teenagers_Los_Angeles.show()
 city_female_counts = df.filter(col('gender') == 'Female') \
                         .groupBy('location') \
                         .count() \
-                        .withColumnRenamed('count', 'female_count').orderBy('female_count',ascending=False)
+                        .withColumnRenamed('count', 'female_count').orderBy('female_count', ascending=False)
 print("Number of females in each city")
 
 city_female_counts.show()
@@ -80,7 +80,17 @@ print("Number of females in the city:", max_female_city['female_count'])
 min_female_city = city_female_counts.orderBy(col('female_count').asc()).first()
 
 print("City with the minimum number of females:", min_female_city['location'])
+
 print("Number of females in the city:", min_female_city['female_count'])
 
+# Count of female babies living in seattle
+
+print("Female babies living in Seattle")
+
+female_babies_living_in_Seattle = df.filter((df.age >= 1) & (df.age <= 5)& (df.location == 'Seattle') &
+                                            (df.gender == 'Female'))
+
+
+female_babies_living_in_Seattle.select("name", "age").show()
 
 spark.stop()
