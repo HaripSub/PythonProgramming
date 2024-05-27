@@ -105,7 +105,40 @@ print("Female babies living in Seattle")
 
 female_babies_living_in_Seattle = df_persons_data[(df_persons_data['age'] >= 1) & (df_persons_data['age'] <= 5)
                                                   & (df_persons_data['location'] == 'Seattle') &
-                                                  (df_persons_data['gender'] == 'Female')]
+                                                  (df_persons_data['gender'] == 'Female')]. \
+    sort_values(by='age', ascending=True)
 
 print(female_babies_living_in_Seattle[['name', 'age']])
 
+print("Female doctors living in Chicago")
+
+female_doctors_in_chicago = df_persons_data[
+    (df_persons_data['gender'] == 'Female') & (df_persons_data['location'] == 'Chicago') &
+    (df_persons_data['occupation'].str.contains("Doctor", case=False))]
+
+print(female_doctors_in_chicago)
+
+print("Retired Female citizens count per city")
+
+female_retired_citizens_data = df_persons_data[(df_persons_data['occupation'] == 'Retired')
+                                               & (df_persons_data['gender'] == 'Female')]
+
+female_retired_citizens_count_per_city = female_retired_citizens_data['location'].value_counts()
+
+print(female_retired_citizens_count_per_city)
+
+print("city with maximum of female retired citizens")
+
+city_with_max_female_retired_citizens = female_retired_citizens_count_per_city.idxmax()
+
+max_female_retired_count = female_retired_citizens_count_per_city.max()
+
+print(f'{city_with_max_female_retired_citizens} with {max_female_retired_count} females')
+
+print("Male students living in Phoenix")
+
+Male_school_students_in_phoenix = df_persons_data[
+    (df_persons_data['gender'] == 'Male') & (df_persons_data['location'] == 'Phoenix') &
+    (df_persons_data['occupation'].str.contains("School Student", case=False))].sort_values(by='age', ascending=True)
+
+print(Male_school_students_in_phoenix[['name','age']])

@@ -64,9 +64,9 @@ print(" Teenagers living in LosAngles:")
 teenagers_Los_Angeles.show()
 
 city_female_counts = df.filter(col('gender') == 'Female') \
-                        .groupBy('location') \
-                        .count() \
-                        .withColumnRenamed('count', 'female_count').orderBy('female_count', ascending=False)
+    .groupBy('location') \
+    .count() \
+    .withColumnRenamed('count', 'female_count').orderBy('female_count', ascending=False)
 print("Number of females in each city")
 
 city_female_counts.show()
@@ -75,6 +75,7 @@ city_female_counts.show()
 max_female_city = city_female_counts.orderBy(col('female_count').desc()).first()
 
 print("City with the maximum number of females:", max_female_city['location'])
+
 print("Number of females in the city:", max_female_city['female_count'])
 
 min_female_city = city_female_counts.orderBy(col('female_count').asc()).first()
@@ -87,10 +88,32 @@ print("Number of females in the city:", min_female_city['female_count'])
 
 print("Female babies living in Seattle")
 
-female_babies_living_in_Seattle = df.filter((df.age >= 1) & (df.age <= 5)& (df.location == 'Seattle') &
-                                            (df.gender == 'Female'))
-
+female_babies_living_in_Seattle = df.filter((df.age >= 1) & (df.age <= 5) & (df.location == 'Seattle') &
+                                            (df.gender == 'Female')).orderBy('age', ascending=True)
 
 female_babies_living_in_Seattle.select("name", "age").show()
+
+city_female_retired_counts = df.filter((df.gender == 'Female') & (df.occupation == 'Retired')) \
+    .groupBy('location') \
+    .count() \
+    .withColumnRenamed('count', 'female_retired_count').orderBy('female_retired_count', ascending=False)
+print("Number of females in each city")
+
+city_female_retired_counts.show()
+
+# Find city with maximum females
+max_female_retired_city = city_female_retired_counts.orderBy(col('female_retired_count').desc()).first()
+
+print("City with the maximum number of retired females:", max_female_retired_city['location'])
+
+print("count of number of retired females in the city:", max_female_retired_city['female_retired_count'])
+
+print("Male students living in Phoenix")
+
+Male_school_students_in_phoenix = df[
+    (df['gender'] == 'Male') & (df['location'] == 'Phoenix') &
+    (df['occupation'] == "School Student")].orderBy('age', ascending=True)
+
+Male_school_students_in_phoenix.select("name", "age").show()
 
 spark.stop()
