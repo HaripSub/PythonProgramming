@@ -12,11 +12,14 @@ houston_data = data[data['location'] == 'Houston']
 # Calculate the gender distribution
 gender_counts = houston_data['gender'].value_counts()
 
+print(gender_counts)
+
 
 # Function to format the pie chart labels with the actual counts
 def func(pct, all_values):
-    absolute = int(pct / 100. * sum(all_values))
-    return f"{absolute:d}"
+    absolute = pct / 100. * sum(all_values)
+    rounded_value = round(absolute)
+    return f"{rounded_value}"
 
 
 # Plot pie chart for gender distribution
