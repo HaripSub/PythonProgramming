@@ -22,7 +22,15 @@ class MyTestCase(unittest.TestCase):
     def test_find_maximum_list_lambda(self):
         given_list = [23, 89, 56, 45, 67]
         maximum_list = lambda_basic_examples.find_max_numbers_list(given_list)
-        self.assertEqual(maximum_list,89)
+        self.assertEqual(maximum_list, 89)
+
+    def test_is_prime_true(self):
+        is_prime = lambda_basic_examples.is_prime(7)
+        self.assertEqual(is_prime, "The 7 is prime");
+
+    def test_is_prime_false(self):
+        is_prime = lambda_basic_examples.is_prime(12)
+        self.assertEqual(is_prime, "The 12 is not prime");
 
 
 if __name__ == '__main__':
