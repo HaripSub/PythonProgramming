@@ -14,7 +14,6 @@ capitalized_dry_fruits_list_sorted.append("Pecan")
 
 capitalized_dry_fruits_list_appended_sorted = sorted(capitalized_dry_fruits_list_sorted, reverse=True)
 
-
 new_nuts_list = ["Peanut", "Hazelnut", "Macadamia", "Coconut"]
 
 capitalized_dry_fruits_list_appended_sorted.extend(new_nuts_list)
@@ -25,12 +24,12 @@ sorted_extended_dry_fruits_list = sorted(capitalized_dry_fruits_list_appended_so
 
 sorted_extended_dry_fruits_list.pop()
 
+# filter the dry fruits starting with P
 
+dry_fruits_starting_with_P = filter(lambda dry_fruit: dry_fruit.startswith('P')
+                                    , sorted_extended_dry_fruits_list)
 
-
-
-
-
+print(list(dry_fruits_starting_with_P))
 
 
 
