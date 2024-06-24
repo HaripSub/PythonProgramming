@@ -36,3 +36,5 @@ values = sorted_persons.values()
 # Getting all key-value pairs
 items = sorted_persons.items()
 
+print(items)
+
