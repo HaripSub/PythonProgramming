@@ -23,5 +23,4 @@ check_sign = lambda x: 'Positive number' if x > 0 else ('Negative number' if x <
 is_prime = lambda number: f"The {number} is prime" if number > 1 and all(number % i != 0 for i in
                                                                          range(2, int(math.sqrt(
                                                                              number)) + 1)) \
-                                                                else f"The {number} is not prime"
-
+    else f"The {number} is not prime"
