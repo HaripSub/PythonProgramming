@@ -19,6 +19,18 @@ def calculate_sum(numbers):
     return sum(numbers)
 
 
+def generate_number_file():
+    # Specify the range of numbers you want to include in the file
+    start = 1
+    end = 10
+
+    # Open a file in write mode
+    with open('input.txt', 'w') as file:
+        for number in range(start, end + 1):
+            # Write each number followed by a newline character
+            file.write(f"{number}\n")
+
+
 def write_result_to_file(file_path, result):
     """Write the result to a file."""
     try:
@@ -41,4 +53,5 @@ def main(input_file, output_file):
 # Example usage
 input_file = 'input.txt'
 output_file = 'output.txt'
+generate_number_file()
 main(input_file, output_file)
