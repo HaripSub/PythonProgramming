@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from tkinter import scrolledtext
 
 def send_message():
     user_message = entry_box.get()
@@ -10,12 +10,11 @@ def send_message():
         entry_box.delete(0, tk.END)
         respond_to_message(user_message)
 
-
 def respond_to_message(message):
     # Basic responses for learning Python
     message = message.lower()
     if "hello" in message:
-        bot_message = "Hello! I'm here to help you learn Python. Ask me anything!"
+        bot_message = "Hello again! I'm here to help you learn Python. Ask me anything!"
     elif "variable" in message:
         bot_message = ("In Python, a variable is used to store information. "
                        "For example:\n"
@@ -57,13 +56,13 @@ def respond_to_message(message):
                        "print(my_list[0])  # Accessing the first item\n"
                        "```\n"
                        "Lists can contain different data types and can be accessed using indices.")
-    elif "bye" or "quit" in message:
+    elif "bye" in message or "quit" in message:
         bot_message = "Goodbye! Have a great day!"
         chat_display.config(state=tk.NORMAL)
         chat_display.insert(tk.END, "Bot: " + bot_message + "\n")
         chat_display.config(state=tk.DISABLED)
         root.update()  # Update the display to show the goodbye message
-        root.after(2000, root.quit)  # Close the application after 3000 milliseconds (3 seconds)
+        root.after(2000, root.quit)  # Close the application after 2000 milliseconds (2 seconds)
         return
     else:
         bot_message = "I'm sorry, I don't understand that. Can you ask about Python concepts like variables, " \
@@ -73,23 +72,30 @@ def respond_to_message(message):
     chat_display.insert(tk.END, "Bot: " + bot_message + "\n")
     chat_display.config(state=tk.DISABLED)
 
-
 # Initialize the main window
 root = tk.Tk()
 root.title("Python Learning Chat Box")
 
-# Create a chat display area
-chat_display = tk.Text(root, height=20, width=60, state=tk.DISABLED)
-chat_display.pack(padx=10, pady=10)
+# Create a chat display area with scrollbar
+frame = tk.Frame(root)
+frame.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+
+chat_display = scrolledtext.ScrolledText(frame, wrap=tk.WORD, width=60, height=20)
+chat_display.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
 # Add an initial greeting message
 chat_display.config(state=tk.NORMAL)
 chat_display.insert(tk.END, "Bot: Hello! I'm here to help you learn Python. Ask me anything!\n")
 chat_display.config(state=tk.DISABLED)
 
+# Create a scrollbar and attach it to the chat display
+scrollbar = tk.Scrollbar(frame, command=chat_display.yview)
+scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+chat_display.config(yscrollcommand=scrollbar.set)
+
 # Create an entry box for typing messages
 entry_box = tk.Entry(root, width=40)
-entry_box.pack(side=tk.LEFT, padx=10, pady=10)
+entry_box.pack(side=tk.LEFT, padx=10, pady=10, fill=tk.X)
 
 # Create a send button
 send_button = tk.Button(root, text="Send", command=send_message)
