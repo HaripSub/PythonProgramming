@@ -10,14 +10,16 @@ class TranslatorApp:
 
         # Source Language Label and Dropdown (if needed)
         ttk.Label(root, text="Source language:").grid(row=0, column=0, padx=10, pady=10)
-        self.source_language = ttk.Combobox(root, values=["en", "fr", "es", "de"], state="readonly")
-        self.source_language.set("en")
+        self.source_language = ttk.Combobox(root, values=["english", "french", "spanish", "german", "italian"],
+                                            state="readonly")
+        self.source_language.set("english")
         self.source_language.grid(row=0, column=1, padx=10, pady=10)
 
         # Destination Language Label and Dropdown
         ttk.Label(root, text="Destination language:").grid(row=1, column=0, padx=10, pady=10)
-        self.dest_language = ttk.Combobox(root, values=["fr", "en", "es", "de", "ta"], state="readonly")
-        self.dest_language.set("fr")
+        self.dest_language = ttk.Combobox(root, values=["french", "english", "spanish", "german", "tamil"   , "italian"],
+                                          state="readonly")
+        self.dest_language.set("french")
         self.dest_language.grid(row=1, column=1, padx=10, pady=10)
 
         # Input Label and Text Area

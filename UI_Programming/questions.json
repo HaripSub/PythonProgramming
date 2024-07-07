@@ -1,0 +1,132 @@
+[
+    {
+        "question": "What is the capital of France?",
+        "choices": ["Paris", "London", "Berlin", "Madrid"],
+        "answer": "Paris",
+        "category": "Countries"
+    },
+    {
+        "question": "What is Deoxyribonucleic acid more commonly known as?",
+        "choices": ["DNA", "RNA", "Vitamin12", "Protein"],
+        "answer": "DNA",
+        "category": "Science"
+    },
+    {
+        "question": "What is the capital of United Kingdom?",
+        "choices": ["London", "Paris", "Berlin", "WashingtonDC"],
+        "answer": "London",
+        "category": "Countries"
+    },
+    {
+        "question": "What is the capital of Japan?",
+        "choices": ["Beijing", "Seoul", "Tokyo", "Bangkok"],
+        "answer": "Tokyo",
+        "category": "Countries"
+    },
+        {
+        "question": "What is the capital of Germany?",
+        "choices": ["Paris", "London", "Berlin", "Madrid"],
+        "answer": "Berlin",
+            "category": "Countries"
+    },
+    {
+        "question": "What is the capital of Spain?",
+        "choices": ["London", "Madrid", "Berlin", "WashingtonDC"],
+        "answer": "Madrid",
+        "category": "Countries"
+    },
+    {
+        "question": "What is the capital of China?",
+        "choices": ["Beijing", "Seoul", "Tokyo", "Bangkok"],
+        "answer": "Beijing",
+       "category": "Countries"
+    },
+    {
+        "question": "What is the capital of Jordan?",
+        "choices": ["Ankara", "Seoul", "Amman", "Bangkok"],
+        "answer": "Amman",
+        "category": "Countries"
+    },
+    {
+        "question": "What does He stand for on the periodic table?",
+        "choices": ["Helium", "Hydrogen", "Oxygen", "Nitrogen"],
+        "answer": "Helium",
+        "category": "Science"
+    },
+
+    {
+        "question": "What is the capital of Switzerland?",
+        "choices": ["Berlin", "Rome", "Bern", "Bangkok"],
+        "answer": "Bern",
+        "category": "Countries"
+    },
+    {
+        "question": "What is the capital of Egypt?",
+        "choices": ["Ankara", "Seoul", "Amman", "Cairo"],
+        "answer": "Cairo",
+        "category": "Countries"
+
+    },
+
+   {
+        "question": "What is the capital of Qatar?",
+        "choices": ["Ankara", "Doha", "Amman", "Cairo"],
+        "answer": "Doha",
+          "category": "Countries"
+    },
+     {
+        "question": "What is the average body temperature?",
+        "choices": ["45 degree Celsius", "30 degree Celsius", "20 degree Celsius", "37 degree Celsius"],
+        "answer": "37 degree Celsius",
+          "category": "Science"
+    },
+
+
+     {
+        "question": "Which of these terms is used to describe periodic wind and heavy rainfall in and around India?",
+        "choices": ["monsoon", "typhoon", "Squall", "chinook"],
+        "answer": "monsoon",
+          "category": "Weather"
+    },
+    {
+        "question": "What is the difference between fog and mist?",
+        "choices": ["region where it occurs", "duration", "altitude", "visibility"],
+        "answer": "visibility",
+          "category": "Weather"
+    },
+       {
+        "question": "Most of Earth’s weather happens in the lowest part of the atmosphere, known as the…",
+        "choices": ["troposphere", "mesosphere", "exosphere", "stratosphere"],
+        "answer": "troposphere",
+          "category": "Weather"
+    },
+          {
+        "question": "What does an anemometer measure?",
+        "choices": ["rainfall", "humidity", "wind", "air pressure"],
+        "answer": "wind",
+          "category": "Weather"
+    },
+          {
+        "question": "Who discovered the concept of gravity?",
+        "choices": ["Albert Einstein", "Sir Isaac Newton", "Stephen Hawking", "Galileo Galilei"],
+        "answer": "Sir Isaac Newton",
+          "category": "Science"
+    },
+
+ {
+        "question": "Parhelion is an optical illusion involving which of the following?",
+        "choices": ["the sun", "a rainbow", "the ocean", "lightening"],
+        "answer": "the sun",
+         "category": "Weather"
+    },
+   {
+        "question": "How many bones are in the human body?",
+        "choices": ["100", "210", "206", "300"],
+        "answer": "206",
+         "category": "Science"
+    }
+
+
+
+
+]
