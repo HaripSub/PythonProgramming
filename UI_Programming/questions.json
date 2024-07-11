@@ -95,10 +95,24 @@
           "category": "Weather"
     },
        {
-        "question": "Most of Earth’s weather happens in the lowest part of the atmosphere, known as the…",
+        "question": "Most of Earth's weather happens in the lowest part of the atmosphere,known as",
         "choices": ["troposphere", "mesosphere", "exosphere", "stratosphere"],
         "answer": "troposphere",
           "category": "Weather"
+    },
+
+         {
+        "question": "Who was the first man to reach the South Pole?",
+        "choices": ["Edmund Hillary", "Tom Creen", "Robert Falcon Scott", "Roald Amundsen"],
+        "answer": "Roald Amundsen",
+          "category": "General Knowledge"
+    },
+
+          {
+        "question": "What type of rock is marble?",
+        "choices": ["Granite", "Metamorphic", "Sedimentary", "Igneous"],
+        "answer": "Metamorphic",
+          "category": "General Knowledge"
     },
           {
         "question": "What does an anemometer measure?",
@@ -124,9 +138,25 @@
         "choices": ["100", "210", "206", "300"],
         "answer": "206",
          "category": "Science"
+    },
+   {
+        "question": "In which city is the sculpture of The Little Mermaid?",
+        "choices": ["Brussels", "Copenhagen", "Oslo", "Stockholm"],
+        "answer": "Copenhagen",
+         "category": "General Knowledge"
+    },
+     {
+        "question": "Which is the highest waterfalls in the world",
+        "choices": ["Angel Falls", "Niagara Falls", "Tugela Falls", "Haloku Falls"],
+        "answer": "Angel Falls",
+         "category": "General Knowledge"
+    },
+  
+
+     {
+        "question": "Which is the strait between mainland Australia and Tasmania?",
+        "choices": ["Bass Strait","Torres Strait","Endeavour Strait","Clarence Strait"],
+        "answer": "Bass Strait",
+         "category": "General Knowledge"
     }
-
-
-
-
 ]
