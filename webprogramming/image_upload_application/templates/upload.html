@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Upload Image</h1>
+{% if error_message %}
+<div class="alert alert-danger" role="alert">
+    {{ error_message }}
+</div>
+{% endif %}
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">Choose Image File:</label>
+        <input type="file" class="form-control-file" id="file" name="file" accept="image/*">
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+{% endblock %}
