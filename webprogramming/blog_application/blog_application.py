@@ -9,7 +9,7 @@ posts = []
 
 @app.route('/')
 def index():
-    return render_template('index.html', posts=posts)
+    return render_template('base.html', posts=posts)
 
 
 @app.route('/post/<int:post_id>')
