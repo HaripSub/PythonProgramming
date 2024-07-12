@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Create New Post - My Blog{% endblock %}
+
+{% block content %}
+    <h1>Create New Post</h1>
+    <form method="POST" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" class="form-control" required>
+            <!-- 'required' attribute ensures the field must be filled out -->
+        </div>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" class="form-control" required></textarea>
+            <!-- 'required' attribute ensures the field must be filled out -->
+        </div>
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Basic validation example: ensure title and content are not empty
+            var title = document.getElementById('title').value;
+            var content = document.getElementById('content').value;
+
+            if (title.trim() === '' || content.trim() === '') {
+                alert('Please fill out all fields.');
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
+{% endblock %}
