@@ -2,6 +2,7 @@ import bisect
 import random
 import numpy as np
 from collections import Counter
+from typing import List
 
 # create a integer list
 
@@ -133,7 +134,8 @@ def count_occurrence_element(my_list, element):
 def print_result_count_individual_element_occurrence():
     element_to_be_found = int(input("Enter the element to be found"))
     if element_to_be_found in duplicate_random_list:
-        print(f"the element {element_to_be_found} occurred {count_occurrence_element(duplicate_random_list, element_to_be_found)} times")
+        print(
+            f"the element {element_to_be_found} occurred {count_occurrence_element(duplicate_random_list, element_to_be_found)} times")
     else:
         print(f"the element {element_to_be_found} is not found in the list")
 
@@ -148,3 +150,12 @@ my_first_10_natural_numbers_list = [i for i in range(1, 11)]
 for x in my_first_10_natural_numbers_list:
     if x % 2 == 0:
         my_first_10_natural_numbers_list.remove(x)
+
+
+# finding the average of the elements in the list
+
+def average(values: List[float]) -> float:
+    return sum(values) / len(values)
+
+
+print(f"average of the elements {average([1.0, 2.0, 3.0,4.0,5.0])}")
